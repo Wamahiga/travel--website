@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Travel</title>
+    <link rel="stylesheet" href="css/destinations.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/ExpressLogo.png" alt="Express Travel Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="#">Destinations</a>
+                    <ul class="dropdown">
+                        <li><a href="hawaii.html">Hawaii</a></li>
+                        <li><a href="paris.html">Paris</a></li>
+                        <li><a href="tokyo.html">Tokyo</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h1>Hawaii</h1>
+        <p>Relax on the shores of white sandy beaches with crystal clear water stretching along the coast of Hawaii for sunbathing enthusiasts and water sports activities. Whether sipping a drink at the beach, surfing, or snorkeling through the reefs rich in marine life from the Hawaiian coast, one cannot but appreciate the tremendous coastal experience.</p>
+		<p>Hawaii is not only for beach lovers; it’s a state with significant historical and cultural significance and geologic and geographic beauty. Discover the exotic flora and fauna – from the crater rim to sea level, or experience Polynesian customs in hulas and authentic LUAU (Ng, 2024). Hawaii will genuinely captivate the traveler’s senses since the area offers immense beauty and excellent and rich culture.</p>
+        
+        <div class="images">
+            <img src="images/Hawaii1.png" alt="Hawaii">
+            <img src="images/Hawaii2.png" alt="Hawaii">
+            <img src="images/Hawaii3.png" alt="Hawaii">
+            <img src="images/Hawaii4.png" alt="Hawaii">
+        </div>
+
+        <section class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This is a fictional site for educational purposes and does not offer travel services</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; www.expresstravel.com - 2024</p>
+    </footer>
+
+    <!-- JavaScript for Banner Slideshow -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide and start the automatic slideshow
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

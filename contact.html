@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Express Travel</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/ExpressLogo.png" alt="Express Travel Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="#">Destinations</a>
+                    <ul class="dropdown">
+                        <li><a href="hawaii.html">Hawaii</a></li>
+                        <li><a href="paris.html">Paris</a></li>
+                        <li><a href="tokyo.html">Tokyo</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-container">
+            <div class="banner-slide">
+                <img src="images/ExpressBanner1.png" alt="Travel Banner 1">
+            </div>
+            <div class="banner-slide">
+                <img src="images/ExpressBanner2.png" alt="Travel Banner 2">
+            </div>
+        </div>
+        <div class="cta">
+            <a href="#contact-form" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main>
+        <h1>Contact Us</h1>
+        
+        <!-- Intro Section -->
+        <section class="intro">
+            <h2>Get in Touch with Express Travel</h2>
+            <p>Feel free to drop us a message, and rest assured that we will promptly respond to your message.</p>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form" id="contact-form">
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section class="disclaimer">
+            <p>This is an educational project and no actual travel is offered.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; www.expresstravel.com - 2024</p>
+    </footer>
+
+    <!-- JavaScript for Banner Slideshow -->
+    <script>
+        // Smooth scrolling for Contact Us button
+        document.querySelector('.cta a').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.getElementById(this.getAttribute('href').slice(1));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    
+        // Existing banner slideshow script
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const totalSlides = slides.length;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+    
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
